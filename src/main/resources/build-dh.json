@@ -50,14 +50,14 @@
   "available_weapon_configurations": {
     "weapon_configurations": [
       {
-        "type": "SWORD",
-        "position": "MAIN_HAND",
+        "type": "LONGBOW",
+        "position": "TWO_HANDED",
         "sigil": "FORCE",
         "set": "SET_1"
       },
       {
-        "type": "FOCUS",
-        "position": "OFF_HAND",
+        "type": "LONGBOW",
+        "position": "TWO_HANDED",
         "sigil": "AIR",
         "set": "SET_1"
       },

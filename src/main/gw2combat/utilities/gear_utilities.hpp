@@ -45,6 +45,7 @@ namespace gw2combat::utils {
 [[nodiscard]] static inline bool is_one_handed_weapon(weapon_type type) {
     switch (type) {
         case weapon_type::EMPTY_HANDED:
+        case weapon_type::LONGBOW:
         case weapon_type::GREATSWORD:
         case weapon_type::TOME:
         case weapon_type::KIT_CONJURE:

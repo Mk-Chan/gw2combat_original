@@ -33,6 +33,7 @@ enum class weapon_type : std::uint32_t
 {
     UNDEFINED,
     EMPTY_HANDED,
+    LONGBOW,
     GREATSWORD,
     SWORD,
     AXE,
@@ -54,6 +55,7 @@ static inline std::unordered_map<weapon_type, std::array<double, 2>>
     weapon_type_to_strength_range_map{
         {weapon_type::UNDEFINED, {0.0, 0.0}},
         {weapon_type::EMPTY_HANDED, {656.0, 725.0}},
+        {weapon_type::LONGBOW, {966.0, 1134.0}},
         {weapon_type::GREATSWORD, {1045.0, 1155.0}},
         {weapon_type::SWORD, {950.0, 1050.0}},
         {weapon_type::AXE, {900.0, 1100.0}},
@@ -89,6 +91,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM(weapon_type,
                              {
                                  {weapon_type::UNDEFINED, "UNDEFINED"},
                                  {weapon_type::EMPTY_HANDED, "EMPTY_HANDED"},
+                                 {weapon_type::LONGBOW, "LONGBOW"},
                                  {weapon_type::GREATSWORD, "GREATSWORD"},
                                  {weapon_type::SWORD, "SWORD"},
                                  {weapon_type::AXE, "AXE"},

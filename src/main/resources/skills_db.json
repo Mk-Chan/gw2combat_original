@@ -613,7 +613,7 @@
       "name": "Symbol of Resolution",
       "weapon_type": "GREATSWORD",
       "damage_coefficient": 0.0,
-      "cast_duration": [350, 233],
+      "cast_duration": [420, 280],
       "hit_on_tick_list": [[], []],
       "on_hit_effect_applications": [],
       "pulse_on_tick_list": [[], []],
@@ -638,6 +638,136 @@
       ],
       "cooldown": [12000, 9600],
       "tags": []
+    },
+    {
+        "name": "Puncture Shot",
+        "weapon_type": "LONGBOW",
+        "damage_coefficient": 1.0,
+        "cast_duration": [1020, 680],
+        "hit_on_tick_list": [[850], [680]],
+        "on_hit_effect_applications": [],
+        "pulse_on_tick_list": [[], []],
+        "on_pulse_effect_applications": [],
+        "child_entity_skills": [],
+        "cooldown": [0, 0],
+        "tags": []
+    },
+    {
+        "name": "True Shot",
+        "weapon_type": "LONGBOW",
+        "damage_coefficient": 3.2,
+        "cast_duration": [1020, 680],
+        "hit_on_tick_list": [[850], [680]],
+        "on_hit_effect_applications": [],
+        "pulse_on_tick_list": [[], []],
+        "on_pulse_effect_applications": [],
+        "child_entity_skills": [],
+        "cooldown": [4000, 3200],
+        "tags": []
+    },
+    {
+        "name": "Deflecting Shot",
+        "weapon_type": "LONGBOW",
+        "damage_coefficient": 1.8,
+        "cast_duration": [850, 680],
+        "hit_on_tick_list": [[850], [680]],
+        "on_hit_effect_applications": [],
+        "pulse_on_tick_list": [[], []],
+        "on_pulse_effect_applications": [],
+        "child_entity_skills": [],
+        "cooldown": [10000, 8000],
+        "tags": []
+    },
+    {
+        "name": "Symbol of Energy",
+        "weapon_type": "LONGBOW",
+        "damage_coefficient": 0.0,
+        "cast_duration": [600, 400],
+        "hit_on_tick_list": [[], []],
+        "on_hit_effect_applications": [],
+        "pulse_on_tick_list": [[], []],
+        "on_pulse_effect_applications": [],
+        "child_entity_skills": [
+            {
+                "name": "Symbol of Energy Initial Attack",
+                "weapon_type": "LONGBOW",
+                "damage_coefficient": 0.69,
+                "cast_duration": [0, 0],
+                "hit_on_tick_list": [[0],[0]],
+                "on_hit_effect_applications": [{
+                    "effect_type": "BURNING",
+                    "num_stacks": 1,
+                    "duration": 12000,
+                    "effect_direction": "OUTGOING"
+                }],
+                "pulse_on_tick_list": [[], []],
+                "on_pulse_effect_applications": [],
+                "child_entity_skills": [],
+                "cooldown": [0, 0],
+                "tags": ["SYMBOL", "LIGHT_FIELD"]
+            },
+            {
+                "name": "Symbol of Energy Usual Attack",
+                "weapon_type": "LONGBOW",
+                "damage_coefficient": 0.69,
+                "cast_duration": [4000, 4000],
+                "hit_on_tick_list": [
+                    [1000, 2000, 3000, 4000],
+                    [1000, 2000, 3000, 4000]
+                ],
+                "on_hit_effect_applications": [],
+                "pulse_on_tick_list": [[], []],
+                "on_pulse_effect_applications": [],
+                "child_entity_skills": [],
+                "cooldown": [0, 0],
+                "tags": ["SYMBOL", "LIGHT_FIELD"]
+            }
+        ],
+        "cooldown": [12000, 9600],
+        "tags": []
+    },
+    {
+        "name": "Hunter's Ward",
+        "weapon_type": "LONGBOW",
+        "damage_coefficient": 0.0,
+        "cast_duration": [950, 760],
+        "hit_on_tick_list": [[], []],
+        "on_hit_effect_applications": [],
+        "pulse_on_tick_list": [[], []],
+        "on_pulse_effect_applications": [],
+        "child_entity_skills": [
+            {
+                "name": "Hunter's Ward Small Attack",
+                "weapon_type": "LONGBOW",
+                "damage_coefficient": 0.75,
+                "cast_duration": [1250, 1250],
+                "hit_on_tick_list": [
+                    [650, 950, 1250],
+                    [650, 950, 1250]
+                ],
+                "on_hit_effect_applications": [],
+                "pulse_on_tick_list": [[], []],
+                "on_pulse_effect_applications": [],
+                "child_entity_skills": [],
+                "cooldown": [0, 0],
+                "tags": []
+            },
+            {
+                "name": "Hunter's Ward Big Attack",
+                "weapon_type": "LONGBOW",
+                "damage_coefficient": 2.5,
+                "cast_duration": [300, 300],
+                "hit_on_tick_list": [[300], [300]],
+                "on_hit_effect_applications": [],
+                "pulse_on_tick_list": [[], []],
+                "on_pulse_effect_applications": [],
+                "child_entity_skills": [],
+                "cooldown": [0, 0],
+                "tags": []
+            }
+        ],
+        "cooldown": [12000, 9600],
+        "tags": []
     },
     {
       "name": "Smite Condition",
