@@ -14,12 +14,13 @@ struct damage_unit {
 };
 
 void incoming_strike_damage_calculation(registry_t& registry, tick_t current_tick) {
-    auto calculate_strike_damage = [](const strike& strike,
+    auto calculate_strike_damage = [&](const strike& strike,
                                       double incoming_strike_damage_multiplier) {
         double effective_critical_hit_multiplier =
             (utils::skill_has_tag(strike.skill, skills::skill_tag::CANNOT_CRIT)
                  ? 1
                  : strike.critical_hit_multiplier);
+        spdlog::info("dmg_coeff: {}, pow: {}, outgoing: {}, crit: {}, incoming: {}", strike.skill.damage_coefficient, registry.get<component::effective_attributes>(utils::get_source_entity(strike.source, registry)).power, strike.outgoing_strike_damage_multiplier*1.25/3825.0, effective_critical_hit_multiplier, incoming_strike_damage_multiplier);
         return strike.outgoing_strike_damage_multiplier * effective_critical_hit_multiplier *
                utils::get_weapon_strength(strike.skill.weapon_type) *
                strike.skill.damage_coefficient * incoming_strike_damage_multiplier;

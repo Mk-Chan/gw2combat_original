@@ -321,7 +321,7 @@ constexpr static inline std::array BOONS{
                    outgoing_condition_damage_multiplier.confusion_multiplier *
                    (double)effect_stack.progress / (double)effects::effect_pulse_rate;
         case effects::effect_type::BINDING_BLADE:
-            return (160.0 + 0.2 * source_effective_attributes.power) *
+            return (160.0 + 0.3 * source_effective_attributes.power) *
                    (double)effect_stack.progress / (double)effects::effect_pulse_rate;
         default:
             spdlog::error("missing damage formula for effect_type: {}",

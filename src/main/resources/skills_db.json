@@ -382,7 +382,7 @@
     {
       "name": "Sword of Wrath",
       "weapon_type": "SWORD",
-      "damage_coefficient": 0.666,
+      "damage_coefficient": 0.75,
       "cast_duration": [525, 350],
       "hit_on_tick_list": [[525], [350]],
       "on_hit_effect_applications": [],
@@ -395,7 +395,7 @@
     {
       "name": "Sword Arc",
       "weapon_type": "SWORD",
-      "damage_coefficient": 0.725,
+      "damage_coefficient": 0.8,
       "cast_duration": [770, 515],
       "hit_on_tick_list": [[770], [515]],
       "on_hit_effect_applications": [],
@@ -524,7 +524,7 @@
     {
       "name": "Strike",
       "weapon_type": "GREATSWORD",
-      "damage_coefficient": 0.8,
+      "damage_coefficient": 0.9,
       "cast_duration": [600, 400],
       "hit_on_tick_list": [[600], [400]],
       "on_hit_effect_applications": [],
@@ -537,7 +537,7 @@
     {
       "name": "Vengeful Strike",
       "weapon_type": "GREATSWORD",
-      "damage_coefficient": 0.8,
+      "damage_coefficient": 1.0,
       "cast_duration": [840, 600],
       "hit_on_tick_list": [[840], [600]],
       "on_hit_effect_applications": [],
@@ -550,7 +550,7 @@
     {
       "name": "Wrathful Strike",
       "weapon_type": "GREATSWORD",
-      "damage_coefficient": 1.25,
+      "damage_coefficient": 1.4,
       "cast_duration": [1000, 675],
       "hit_on_tick_list": [[1000], [675]],
       "on_hit_effect_applications": [],
@@ -579,7 +579,7 @@
     {
       "name": "Leap of Faith",
       "weapon_type": "GREATSWORD",
-      "damage_coefficient": 1.25,
+      "damage_coefficient": 2.0,
       "cast_duration": [1000, 720],
       "hit_on_tick_list": [[1000], [720]],
       "on_hit_effect_applications": [],
@@ -592,7 +592,7 @@
     {
       "name": "Binding Blade",
       "weapon_type": "GREATSWORD",
-      "damage_coefficient": 1.0,
+      "damage_coefficient": 1.5,
       "cast_duration": [720, 475],
       "hit_on_tick_list": [[720], [475]],
       "on_hit_effect_applications": [
@@ -665,7 +665,7 @@
         {
           "name": "Sword of Justice Attack",
           "weapon_type": "EMPTY_HANDED",
-          "damage_coefficient": 0.72,
+          "damage_coefficient": 0.8,
           "cast_duration": [1850, 1850],
           "hit_on_tick_list": [
             [650, 1050, 1450, 1850],
@@ -884,14 +884,14 @@
     {
       "name": "Spear of Justice",
       "weapon_type": "EMPTY_HANDED",
-      "damage_coefficient": 0.6,
+      "damage_coefficient": 0.8,
       "cast_duration": [825, 550],
       "hit_on_tick_list": [[825], [550]],
       "on_hit_effect_applications": [
         {
           "effect_type": "SPEAR_OF_JUSTICE",
           "num_stacks": 1,
-          "duration": 9960,
+          "duration": 12000,
           "effect_direction": "OUTGOING"
         }
       ],
@@ -938,7 +938,7 @@
         {
           "name": "Dragon's Maw Attack",
           "weapon_type": "EMPTY_HANDED",
-          "damage_coefficient": 2.4,
+          "damage_coefficient": 3.6,
           "cast_duration": [500, 500],
           "hit_on_tick_list": [[500], [500]],
           "on_hit_effect_applications": [],
