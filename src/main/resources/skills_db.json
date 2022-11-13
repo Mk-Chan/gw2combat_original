@@ -564,7 +564,7 @@
       "name": "Whirling Wrath",
       "weapon_type": "GREATSWORD",
       "damage_coefficient": 0.4125,
-      "cast_duration": [1968, 1312],
+      "cast_duration": [2175, 1450],
       "hit_on_tick_list": [
         [0, 151, 302, 454, 605, 756, 908, 1059, 1211, 1362, 1513, 1665, 1816, 1968],
         [0, 100, 201, 302, 403, 504, 605, 706, 807, 908, 1009, 1110, 1211, 1312]
@@ -593,7 +593,7 @@
       "name": "Binding Blade",
       "weapon_type": "GREATSWORD",
       "damage_coefficient": 1.5,
-      "cast_duration": [720, 475],
+      "cast_duration": [750, 500],
       "hit_on_tick_list": [[720], [475]],
       "on_hit_effect_applications": [
         {
@@ -1163,6 +1163,32 @@
       "weapon_type": "EMPTY_HANDED",
       "damage_coefficient": 0.0,
       "cast_duration": [32, 32],
+      "hit_on_tick_list": [[], []],
+      "on_hit_effect_applications": [],
+      "pulse_on_tick_list": [[], []],
+      "on_pulse_effect_applications": [],
+      "child_entity_skills": [],
+      "cooldown": [0, 0],
+      "tags": []
+    },
+    {
+      "name": "AFK 100ms",
+      "weapon_type": "EMPTY_HANDED",
+      "damage_coefficient": 0.0,
+      "cast_duration": [100, 100],
+      "hit_on_tick_list": [[], []],
+      "on_hit_effect_applications": [],
+      "pulse_on_tick_list": [[], []],
+      "on_pulse_effect_applications": [],
+      "child_entity_skills": [],
+      "cooldown": [0, 0],
+      "tags": []
+    },
+    {
+      "name": "AFK 50ms",
+      "weapon_type": "EMPTY_HANDED",
+      "damage_coefficient": 0.0,
+      "cast_duration": [50, 50],
       "hit_on_tick_list": [[], []],
       "on_hit_effect_applications": [],
       "pulse_on_tick_list": [[], []],

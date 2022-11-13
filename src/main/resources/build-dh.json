@@ -58,7 +58,7 @@
       {
         "type": "LONGBOW",
         "position": "TWO_HANDED",
-        "sigil": "AIR",
+        "sigil": "IMPACT",
         "set": "SET_1"
       },
       {
@@ -70,7 +70,7 @@
       {
         "type": "GREATSWORD",
         "position": "TWO_HANDED",
-        "sigil": "AIR",
+        "sigil": "IMPACT",
         "set": "SET_2"
       }
     ]

@@ -27,8 +27,8 @@ std::vector<skill_cast> read_scraped_simple_rotation(const std::string& path) {
         std::vector<std::string> row = doc.GetRow<std::string>(i);
         auto skill_opt = skills::SKILLS_DB.get_by_name(row[0]);
         if (!skill_opt) {
-            spdlog::error("unable to parse skill: {}", row[0]);
-            throw std::runtime_error("unable to parse skill");
+            spdlog::error("unable to parse skill: {}, rownum: {}", row[0], i);
+            std::exit(1);
         }
         auto skill = *skill_opt;
         int cast_time = (int)(std::stod(std::string{std::string_view{row[1]}.substr(7).substr(
