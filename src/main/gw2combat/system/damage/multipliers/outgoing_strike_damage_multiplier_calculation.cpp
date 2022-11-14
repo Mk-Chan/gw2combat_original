@@ -62,6 +62,7 @@ void outgoing_strike_damage_multiplier_calculation(registry_t& registry, tick_t)
             double fiery_wrath_multiplier = 1.0;
             double symbolic_exposure_multiplier = 1.0;
             double zealots_aggression_multiplier = 1.0;
+            double flame_legion_multiplier = 1.0;
             auto targeting_ptr = registry.try_get<component::targeting>(entity);
             if (targeting_ptr) {
                 auto target_effects_component_ptr =
@@ -80,6 +81,10 @@ void outgoing_strike_damage_multiplier_calculation(registry_t& registry, tick_t)
                 if (target_is_burning &&
                     utils::has_trait(trait_type::RADIANT_POWER, entity, registry)) {
                     effective_attributes.critical_chance_pct += 10;
+                }
+                if (target_is_burning &&
+                    utils::has_rune(rune_type::FLAME_LEGION, entity, registry)) {
+                    flame_legion_multiplier *= 1.07;
                 }
 
                 fiery_wrath_multiplier += fiery_wrath_is_traited * target_is_burning * 0.07;
@@ -106,32 +111,33 @@ void outgoing_strike_damage_multiplier_calculation(registry_t& registry, tick_t)
                                                 retribution_addend + unscathed_contender_addend +
                                                 symbolic_avenger_addend + inspiring_virtue_addend));
 
-            double final_multiplier =
-                addends_multiplier * scholar_rune_multiplier * inspired_virtue_multiplier *
-                fiery_wrath_multiplier * symbolic_exposure_multiplier * pure_of_sight_multiplier *
-                zealots_aggression_multiplier * (double)effective_attributes.power;
+            double final_multiplier = addends_multiplier * scholar_rune_multiplier *
+                                      inspired_virtue_multiplier * fiery_wrath_multiplier *
+                                      symbolic_exposure_multiplier * pure_of_sight_multiplier *
+                                      zealots_aggression_multiplier * flame_legion_multiplier *
+                                      (double)effective_attributes.power;
             registry.emplace<component::outgoing_strike_damage_multiplier>(
                 entity, component::outgoing_strike_damage_multiplier{final_multiplier});
 
-            //spdlog::info(
-            //    "entity: {}, force: {}, impact: {}, retribution: {}, unscathed: {}, symavenger: {}, "
-            //    "inspiring_virt: {}, scholar: {}, inspired_virt: {}, fiery_wrath: {}, symexposure: "
-            //    "{}, pureofsight: {}, zealotsaggression: {}, final 25vuln: {}, bgh_spear 25vuln: {}",
-            //    utils::get_entity_name(entity, registry),
-            //    force_sigil_addend,
-            //    impact_sigil_addend,
-            //    retribution_addend,
-            //    unscathed_contender_addend,
-            //    symbolic_avenger_addend,
-            //    inspiring_virtue_addend,
-            //    scholar_rune_multiplier,
-            //    inspired_virtue_multiplier,
-            //    fiery_wrath_multiplier,
-            //    symbolic_exposure_multiplier,
-            //    pure_of_sight_multiplier,
-            //    zealots_aggression_multiplier,
-            //    final_multiplier * 1.25 / (double)effective_attributes.power,
-            //    final_multiplier * 1.15 * 1.25 / (double)effective_attributes.power);
+            // spdlog::info(
+            //     "entity: {}, force: {}, impact: {}, retribution: {}, unscathed: {}, symavenger:
+            //     {}, " "inspiring_virt: {}, scholar: {}, inspired_virt: {}, fiery_wrath: {},
+            //     symexposure: "
+            //     "{}, pureofsight: {}, zealotsaggression: {}, final 25vuln: {}, bgh_spear 25vuln:
+            //     {}", utils::get_entity_name(entity, registry), force_sigil_addend,
+            //     impact_sigil_addend,
+            //     retribution_addend,
+            //     unscathed_contender_addend,
+            //     symbolic_avenger_addend,
+            //     inspiring_virtue_addend,
+            //     scholar_rune_multiplier,
+            //     inspired_virtue_multiplier,
+            //     fiery_wrath_multiplier,
+            //     symbolic_exposure_multiplier,
+            //     pure_of_sight_multiplier,
+            //     zealots_aggression_multiplier,
+            //     final_multiplier * 1.25 / (double)effective_attributes.power,
+            //     final_multiplier * 1.15 * 1.25 / (double)effective_attributes.power);
         });
     registry.view<component::source_entity>().each(
         [&](entity_t entity, const component::source_entity& outgoing_damage_source) {

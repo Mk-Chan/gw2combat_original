@@ -21,6 +21,8 @@ struct sigil_geomancy {
     tick_t cooldown_progress = 9'000;
 };
 
+struct sigil_smoldering {};
+
 }  // namespace gw2combat::component
 
 #endif  // GW2COMBAT_COMPONENT_GEAR_SIGILS_HPP

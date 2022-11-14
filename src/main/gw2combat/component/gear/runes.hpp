@@ -9,14 +9,17 @@ enum class rune_type : std::uint32_t
 {
     BALTHAZAR,
     SCHOLAR,
+    FLAME_LEGION,
 };
 
 NLOHMANN_JSON_SERIALIZE_ENUM(rune_type,
                              {
                                  {rune_type::BALTHAZAR, "Rune of Balthazar"},
                                  {rune_type::SCHOLAR, "Rune of Scholar"},
+                                 {rune_type::FLAME_LEGION, "Rune of Flame Legion"},
                                  {rune_type::BALTHAZAR, "balthazar"},
                                  {rune_type::SCHOLAR, "scholar"},
+                                 {rune_type::FLAME_LEGION, "flame legion"},
                              })
 
 }  // namespace gw2combat

@@ -9,6 +9,21 @@
 namespace gw2combat::system {
 
 template <combat_stage stage>
+void sigil_smoldering(registry_t& registry, tick_t current_tick) {
+    if constexpr (stage != combat_stage::BEFORE_OUTGOING_STRIKE_BUFFERING) {
+        return;
+    }
+
+    registry.template view<component::sigil_smoldering>().each([&](entity_t entity) {
+        if (utils::has_sigil_equipped(weapon_sigil::SMOLDERING, entity, registry)) {
+            auto& effective_attributes =
+                registry.template get<component::effective_attributes>(entity);
+            effective_attributes.burning_duration_pct += 20;
+        }
+    });
+}
+
+template <combat_stage stage>
 void sigil_geomancy(registry_t& registry, tick_t current_tick) {
     if constexpr (stage != combat_stage::BEFORE_OUTGOING_STRIKE_BUFFERING) {
         return;

@@ -67,6 +67,9 @@ entity_t build_dh(registry_t& registry) {
     if (utils::has_sigil_at_all(weapon_sigil::AIR, entity, registry)) {
         registry.emplace<component::sigil_air>(entity);
     }
+    if (utils::has_sigil_at_all(weapon_sigil::SMOLDERING, entity, registry)) {
+        registry.emplace<component::sigil_smoldering>(entity);
+    }
 
     registry.emplace<component::is_actor>(entity);
     registry.ctx().emplace_hint<std::string>(to_u32(entity),

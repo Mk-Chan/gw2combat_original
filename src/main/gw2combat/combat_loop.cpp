@@ -47,6 +47,8 @@ void clear_temporary_components(registry_t& registry) {
 
 template <combat_stage stage>
 void run_staged_systems(registry_t& registry, tick_t current_tick) {
+    system::sigil_smoldering<stage>(registry, current_tick);
+
     system::virtue_of_justice<stage>(registry, current_tick);
     system::inspiring_virtue<stage>(registry, current_tick);
     system::legendary_lore<stage>(registry, current_tick);

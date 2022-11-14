@@ -20,6 +20,7 @@ enum class weapon_sigil : std::uint8_t
     FORCE,
     GEOMANCY,
     IMPACT,
+    SMOLDERING,
 };
 
 enum class weapon_position : std::uint8_t
@@ -80,6 +81,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM(weapon_sigil,
                                  {weapon_sigil::FORCE, "FORCE"},
                                  {weapon_sigil::GEOMANCY, "GEOMANCY"},
                                  {weapon_sigil::IMPACT, "IMPACT"},
+                                 {weapon_sigil::SMOLDERING, "SMOLDERING"},
                              })
 NLOHMANN_JSON_SERIALIZE_ENUM(weapon_position,
                              {
